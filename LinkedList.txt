@@ -1,0 +1,41 @@
+Linked List -> A data structure that stores values and the reference of another node. help to have a dynamic and easier memory allocation.
+
+Utilizes more in complex data structures graphs, binary search trees etc.
+
+Flexibility to grow, can have different data type values stored into nodes,resolves the limitation of memory allocation of array.
+
+
+Question - How to create a linkedlist in python? 
+Answer - Create a Class Node then have a two properties into the Node constuctor One is key or considered as values nother is the node instence it self.
+
+Class Node:
+
+    __init__(self,key):
+        self.key = key
+        self.nextNode = None
+
+    
+
+Node temp1 = new Node(5)
+Node temp2 = new Node(6)
+Node temp3 = new Node(8)
+
+
+temp1.nextNode = temp2
+temp2.nextNode = temp3
+temp3.nextNode = null
+
+
+head = temp1
+
+print(head.key) = 5
+print(head.nextNode.key) = 6
+print(head.nextNode.nextNode.key) = 8
+
+
+
+Question - How to traverse through the Linked List ?
+Answer - 
+
+
+
