@@ -1,0 +1,57 @@
+Longest Substring without repeating charactors -
+
+STEP - I - Understand the Problem Space -
+
+There are some example words like 'aabcabbcca', 'youaregreat' etc
+So to solve the substring without repeating the two same char should be avoided and the window shift is required there, so for  the substring we would have to maintain a record of 
+previously checked substrings.
+
+
+
+STEP - I - How to traverse and logic to substring, substring -
+
+○ Loop through charactors one by one  
+    • Loop through the another charactors of the string and print the result.
+    • Continue to the first loop if the charactor is matched with another next charactor.
+    • Maintain the max result of the substring.
+
+STEP - II - Algorithm and pseudocode -
+
+Iterational solution
+
+• StringInput
+  result = []
+  for item in range(StringInput):
+    res = ""
+    for i in range(item,StringInput):
+         res+=StringInput[i]
+         result.add(res)
+  return result
+
+Recusive solution
+
+• subString(mainString,currInd,len,subStr,resList,selCharInd)
+
+    if currInd > len  
+        return subStr
+    
+    subStr+=mainString[currInd]
+
+    resList.add(subStr)
+
+    subString(mainString,currInd+1,len,subStr,resList,selCharInd)
+
+    if selCharInd > len
+        subString(mainString,currInd+1,len,subStr,resList,selCharInd+1)
+
+
+
+
+
+
+
+
+
+    
+
+

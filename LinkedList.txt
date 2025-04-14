@@ -35,7 +35,87 @@ print(head.nextNode.nextNode.key) = 8
 
 
 Question - How to traverse through the Linked List ?
-Answer - 
+Answer - while loop and for loop
+
+    while head.next != null:
+        Do operations
+        head = head.next
+
+
+    for using for loop for linked list traversal, make sure to make the linked list iterable 
+    using __it__() function in the Node class.
+
+
+    for item in head:
+        do operations
+
+
+Question - You are given two non-empty linked lists representing two non-negative integers. 
+The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.(LEETCODE)
+
+Solution - TO solve this problem lets have the alogithm first
+
+
+m- keep the edge case for 0, if any of the number is 0 after the step 1 then return the non 0 number otherwise return 0
+1- traverse through each linked list till end 
+2- concatinate the digits into string
+3- reverse the stirng and convert them into long
+4- Add the longs 
+5- convert the long into string again reverse them
+6- have new linked list and add digits into each nodes till end
+7- return the linked list
+
+
+
+Code - 
+
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+            l1st,l2st = "", ""
+            l1Lo,l2Lo = 0,0
+
+            head =  ListNode(0)
+            result = head
+
+            while l1 is not None:
+                l1st+= str(l1.val)
+                l1 = l1.next
+        
+            while l2 is not None:
+                l2st+=str(l2.val)
+                l2 = l2.next
+
+
+            if l1st == '0' or l1st == None and l2st == '0' or l2st == None  : return head
+            
+
+            l1Lo = int(0 if self.reverseString(l1st) == '' else self.reverseString(l1st))
+            l2Lo = int(0 if self.reverseString(l2st) == '' else self.reverseString(l2st) )
+
+
+
+            lst = str(l1Lo+l2Lo)
+            l = len(self.reverseString(lst))//here rather then extra loop we can use slicing of list lst[::-1] reversed the list
+            for i in range(0,l):
+                result.next = ListNode(int(lst[l-i-1]))
+                result = result.next
+
+
+            return head.next
+        
+    def reverseString(self,st):
+            res = ""
+            l = len(st)
+            for i in range(0,l):
+                res += st[l-1-i]
+            return res
+
+
+
+Above linked list is a singly linked list type
+
+
 
 
 
